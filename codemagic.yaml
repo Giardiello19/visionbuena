@@ -1,0 +1,16 @@
+workflows:
+  ios-workflow:
+    name: iOS Build
+    environment:
+      xcode: latest
+    scripts:
+      - name: Build iOS
+        script: |
+          xcodebuild \
+          -project "BMI Calculator.xcodeproj" \
+          -scheme "BMI Calculator" \
+          -sdk iphoneos \
+          -configuration Release \
+          build
+    artifacts:
+      - build/ios/iphoneos/*.app

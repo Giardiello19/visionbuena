@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+    <!-- APP INFO -->
+    <key>CFBundleName</key>
+    <string>VisionAR</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>VisionAR</string>
+
+    <key>CFBundleIdentifier</key>
+    <string>com.rodrigogiardiello.visionar</string>
+
+    <key>CFBundleVersion</key>
+    <string>1</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+
+    <!-- iOS VERSION -->
+    <key>MinimumOSVersion</key>
+    <string>13.0</string>
+
+    <!-- DISPOSITIVO -->
+    <key>UIDeviceFamily</key>
+    <array>
+        <integer>1</integer>
+    </array>
+
+    <!-- ORIENTACIÓN -->
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+
+    <!-- PERMISOS -->
+
+    <key>NSCameraUsageDescription</key>
+    <string>Esta app necesita acceso a la cámara para realidad aumentada</string>
+
+    <key>NSMotionUsageDescription</key>
+    <string>Esta app usa sensores de movimiento para experiencia AR</string>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Esta app necesita acceso a tu galería para cargar videos</string>
+
+    <!-- ARKIT -->
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>arkit</string>
+    </array>
+
+    <!-- UI -->
+    <key>UILaunchStoryboardName</key>
+    <string></string>
+
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UIApplicationSupportsMultipleScenes</key>
+        <false/>
+    </dict>
+
+</dict>
+</plist>
