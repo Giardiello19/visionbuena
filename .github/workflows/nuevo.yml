@@ -1,10 +1,44 @@
-name: Nuevo Test
+name: Build IPA Real
 
 on:
   workflow_dispatch:
 
 jobs:
-  test:
+  build:
     runs-on: macos-latest
+
     steps:
-      - run: echo "YA FUNCIONA BIEN"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Clean
+        run: |
+          xcodebuild clean \
+          -project "BMI Calculator.xcodeproj" \
+          -scheme "BMI Calculator"
+
+      - name: Build (NO SIGN)
+        run: |
+          xcodebuild \
+          -project "BMI Calculator.xcodeproj" \
+          -scheme "BMI Calculator" \
+          -sdk iphoneos \
+          -configuration Release \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGNING_REQUIRED=NO \
+          build
+
+      - name: Create IPA
+        run: |
+          mkdir Payload
+          cp -r build/Release-iphoneos/*.app Payload/
+          zip -r app.ipa Payload
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: iOS-IPA
+          path: app.ipa
